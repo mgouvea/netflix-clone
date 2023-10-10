@@ -10,7 +10,7 @@ export default NextAuth({
       id: 'credentials',
       name: 'Credentials',
       credentials: {
-        email: { label: 'Email', type: 'email' },
+        email: { label: 'Email', type: 'text' },
         password: { label: 'Password', type: 'password' },
       },
       async authorize(credentials) {
@@ -30,6 +30,7 @@ export default NextAuth({
           credentials.password,
           user.hashedPassword
         );
+        console.log('isCorrectPassword', isCorrectPassword);
 
         if (!isCorrectPassword) {
           throw new Error('Password is incorrect');
