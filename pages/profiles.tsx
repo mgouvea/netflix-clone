@@ -23,7 +23,6 @@ const Profiles = () => {
   const router = useRouter();
 
   const { data: user } = useCurrentUser();
-  const { name } = user?.currentUser;
 
   return (
     <div className="flex items-center h-full justify-center">
@@ -43,7 +42,7 @@ const Profiles = () => {
                 <img src="/images/default-blue.png" alt="profile" />
               </div>
               <div className="mt-4 text-gray-400 text-2xl text-center group-hover:text-white">
-                {name}
+                {user?.currentUser?.name}
               </div>
             </div>
           </div>
